@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>한민족 조선민족 | 이름은 둘, 사람은 하나</title>
+<meta name="description" content="남에서는 한민족, 북에서는 조선민족. 부르는 이름은 둘이어도 사람들은 하나다. Two names for one people.">
+<meta property="og:title" content="한민족 조선민족 | 이름은 둘, 사람은 하나">
+<meta property="og:description" content="Two names, one people. 부르는 이름은 둘이어도 사람들은 하나다.">
+<meta property="og:url" content="https://han-minjok.org/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://han-minjok.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F3EFE6">
+<link rel="preload" href="/hm-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23F3EFE6'/%3E%3Ccircle cx='9' cy='9' r='3.2' fill='%231D1B19'/%3E%3Crect x='5' y='17' width='14' height='3' fill='%231D1B19'/%3E%3Crect x='23' y='6' width='3' height='20' fill='%23B8322A'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"HM Serif";src:url(/hm-serif.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{
+  /* 오방색: the five traditional colours */
+  --baek:#F3EFE6;  /* 백 white: hanji ground */
+  --heuk:#1D1B19;  /* 흑 black: meok ink */
+  --cheong:#1F4E79;/* 청 blue */
+  --jeok:#B8322A;  /* 적 red: vermilion, the seal */
+  --hwang:#D6A12B; /* 황 yellow: the centre */
+  --ash:#5A554D;   /* secondary text */
+  --wash:#D9D2C4;  /* quiet structure */
+  --sf:"HM Serif","Noto Serif KR","Noto Serif CJK KR",AppleMyungjo,"Nanum Myeongjo",Batang,serif;
+  --ss:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Segoe UI",sans-serif;
+  --gut:clamp(1.25rem,5vw,2.5rem);
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--baek);color:var(--heuk);font:1.0625rem/1.8 var(--ss);-webkit-text-size-adjust:100%}
+/* hanji fibre: drawn by the browser, no image download */
+body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .06' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .4 0 0 0 0 .33 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)'/%3E%3C/svg%3E");padding-bottom:env(safe-area-inset-bottom)}
+:lang(ko){word-break:keep-all;overflow-wrap:anywhere}
+.en{color:var(--ash);font-size:.93em;line-height:1.65}
+p+.en{margin-top:.4rem}
+.wrap{max-width:40rem;margin:0 auto;padding:0 var(--gut)}
+h1,h2,.sf{font-family:var(--sf);font-weight:600}
+h2{font-size:clamp(1.55rem,6.4vw,2.3rem);line-height:1.35;letter-spacing:-.01em}
+h2+.en{margin:.3rem 0 1.6rem}
+
+/* 색동 saekdong: five-colour band, used as the reading-progress thread */
+.saekdong{height:5px;background:linear-gradient(90deg,var(--cheong) 0 20%,var(--jeok) 0 40%,var(--hwang) 0 60%,#fff 0 80%,var(--heuk) 0)}
+.thread{position:fixed;inset:0 0 auto 0;z-index:9;transform-origin:0 50%;transform:scaleX(0)}
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:scroll()){
+  @keyframes grow{to{transform:scaleX(1)}}
+  .thread{animation:grow auto linear both;animation-timeline:scroll()}
+}}
+@supports not (animation-timeline:scroll()){.thread{display:none}}
+
+/* ── Hero ── */
+.hero{padding-top:env(safe-area-inset-top)}
+.mark{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;gap:5px 9px;width:max-content;padding:1.4rem var(--gut) 0;align-items:center}
+.mark i{display:block;background:var(--heuk)}
+.mark .d{width:8px;height:8px;border-radius:50%}
+.mark .b{width:22px;height:4px;grid-row:2}
+.mark .s{width:4px;height:26px;grid-column:2;grid-row:1/3;background:var(--jeok)}
+.art{position:relative;margin-top:.5rem}
+.art svg{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(#000 58%,transparent);mask-image:linear-gradient(#000 58%,transparent)}
+.daegan{fill:none;stroke:var(--heuk);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:no-preference){
+  .hero .daegan{stroke-dasharray:1;animation:ink 2.8s .3s cubic-bezier(.55,0,.2,1) both}
+  @keyframes ink{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  .hero .sun{animation:rise 2.2s .6s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}}
+}
+.seal{position:absolute;right:var(--gut);bottom:12%;writing-mode:vertical-rl;background:var(--jeok);color:var(--baek);font:600 .95rem/1 var(--sf);letter-spacing:.12em;padding:.5rem .32rem;border-radius:3px;box-shadow:inset 0 0 0 2px var(--jeok),inset 0 0 0 3px rgba(243,239,230,.55)}
+.names{margin-top:-.5rem}
+h1{font-size:clamp(2.9rem,15vw,5.6rem);line-height:1.05;letter-spacing:-.02em;display:flex;flex-direction:column;align-items:flex-start}
+h1 .stem{display:block;width:4px;height:clamp(2.2rem,11vw,3.6rem);background:var(--jeok);margin:.55rem 0 .55rem .45em}
+@media (prefers-reduced-motion:no-preference){
+  h1 .stem{transform-origin:top;animation:stand 1s 1.8s cubic-bezier(.6,0,.2,1) both}
+  @keyframes stand{from{transform:scaleY(0)}}
+}
+.lede{margin-top:1.8rem;font-size:1.12rem}
+.hero .en{margin-bottom:3.5rem}
+
+section{padding:4.5rem 0}
+.band{margin:0}
+
+/* ── 세로쓰기 vertical tagline ── */
+.tag .wrap{display:flex;flex-direction:row-reverse;gap:1.4rem;align-items:flex-start}
+.tag h2{writing-mode:vertical-rl;font-size:clamp(1.9rem,8.6vw,2.7rem);line-height:1.5;letter-spacing:.06em;flex:none;padding-left:1rem;border-left:1px solid var(--wash)}
+.tag h2 span{display:block}
+.tcy{text-combine-upright:all;-webkit-text-combine:horizontal;color:var(--jeok)}
+.tag .txt{padding-top:.4rem}
+.tag .txt p:lang(ko){margin-top:1.5rem}
+.tag .txt .en:first-child{margin-top:0;font-style:italic}
+
+/* ── 천지인 ── */
+.cji{background:rgba(29,27,25,.035)}
+.strokes{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.5rem 0 2rem;text-align:center}
+.strokes figure{display:grid;justify-items:center;align-content:end;gap:.9rem;padding:1.4rem .5rem 1rem;border:1px solid var(--wash);border-radius:4px;background:var(--baek)}
+.g{display:block;background:var(--heuk)}
+.g.d{width:18px;height:18px;border-radius:50%;margin-bottom:22px}
+.g.b{width:58px;height:8px;margin-bottom:27px}
+.g.s{width:8px;height:62px;background:var(--jeok)}
+.strokes figcaption{font:600 1.15rem/1.3 var(--sf)}
+.strokes figcaption span{display:block;font:400 .8rem/1.4 var(--ss);color:var(--ash);margin-top:.2rem}
+.combos{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;margin-top:1.8rem}
+.eq{display:flex;align-items:center;gap:.45rem}
+.eq em{font-style:normal;color:var(--ash);font-size:1rem}
+.gl{position:relative;display:block;width:30px;height:40px}
+.gl b{position:absolute;background:var(--heuk)}
+.gl .s{width:5px;height:36px;left:12px;top:2px}
+.gl .d{width:9px;height:9px;border-radius:50%;left:10px;top:15px}
+.gl .b{width:28px;height:5px;left:1px;top:18px}
+.gl.a b{background:var(--jeok)}.gl.a .s{left:8px}.gl.a .d{left:18px}
+.gl.o b,.gl.u b{background:var(--jeok)}.gl.o .d{top:8px}.gl.o .b{top:24px}
+.gl.u .b{top:12px}.gl.u .d{top:24px}
+.combo-note{margin-top:1rem;font-size:.85rem}
+/* ── Pairs ── */
+.sides{display:flex;justify-content:space-between;color:var(--ash);font-size:.85rem;margin:2rem 0 .25rem}
+ol{list-style:none;padding:0}
+li{padding:1.6rem 0;border-bottom:1px solid var(--wash)}
+li:last-child{border-bottom:0}
+.pair{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.9rem}
+.name{font-size:clamp(1.3rem,6vw,1.85rem);line-height:1.2}
+.line{height:3px;background:var(--c)}
+.line.w{height:5px;background:#fff;box-shadow:0 0 0 1px var(--wash)}
+.years{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ash);margin-top:.3rem;letter-spacing:.03em}
+.pair+p,.years+p{margin-top:.9rem}
+.together .line{height:5px;position:relative}
+.together .shared{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--hwang);color:var(--heuk);font:600 .85rem/1 var(--ss);padding:.45rem .6rem;border-radius:2px}
+.obang{margin-top:1.8rem;padding:1rem 1.1rem;border-left:5px solid var(--hwang);background:rgba(214,161,43,.1);font-size:.95rem}
+
+/* ── Close ── */
+.close{padding-bottom:0}
+.close .art{margin-top:2.2rem}
+.coda{font:600 clamp(1.45rem,6.2vw,2rem)/1.55 var(--sf);margin-top:2.5rem}
+footer{display:flex;justify-content:space-between;align-items:center;padding:2.5rem var(--gut) 2rem;color:var(--ash);font-size:.8rem;max-width:40rem;margin:0 auto}
+footer .seal{position:static}
+.credit{display:grid;gap:.15rem;line-height:1.5}
+.credit a{color:var(--heuk);text-decoration:underline;text-decoration-color:var(--jeok);text-underline-offset:3px;text-decoration-thickness:1.5px}
+.credit a:focus-visible{outline:2px solid var(--jeok);outline-offset:3px;border-radius:2px}
+.gang{color:var(--heuk);font-size:.95rem;letter-spacing:.08em;margin-top:.2rem}
+
+/* ink bleeds in as you read (progressive) */
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){
+  .reveal{animation:bleed linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+  @keyframes bleed{from{opacity:0;filter:blur(3px);transform:translateY(14px)}}
+}}
+
+@media (min-width:48rem){
+  .art{max-width:min(100%,108vh);margin-inline:auto}
+  .ink{-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+  .close .art{max-width:min(100%,80vh)}
+  .names{margin-top:-1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="saekdong thread" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ridges" viewBox="0 0 400 220">
+      <path d="M0,220 L0,136.5 3,135.5 6,133.3 9,128.6 12,124.5 15,122.7 18,117.6 21,109.8 24,99.4 27,85.7 30,67.0 33,69.7 36,87.9 39,101.2 42,111.1 45,118.7 48,123.7 51,125.4 54,128.9 57,134.0 60,136.3 63,137.4 66,137.8 69,137.0 72,134.2 75,132.4 78,131.5 81,133.9 84,136.2 87,137.6 90,138.0 93,136.5 96,136.5 99,137.9 102,137.7 105,136.8 108,135.4 111,132.7 114,127.4 117,123.3 120,119.5 123,112.3 126,104.8 129,103.8 132,101.4 135,104.0 138,109.3 141,115.6 144,119.4 147,122.0 150,123.9 153,124.6 156,123.2 159,123.6 162,124.1 165,121.9 168,117.4 171,110.7 174,105.7 177,100.9 180,98.4 183,97.4 186,95.2 189,97.9 192,101.6 195,105.1 198,107.1 201,112.6 204,118.3 207,121.1 210,121.9 213,121.0 216,117.7 219,110.8 222,112.4 225,114.1 228,113.1 231,110.5 234,108.9 237,111.7 240,112.4 243,117.3 246,123.1 249,126.8 252,129.4 255,131.0 258,131.0 261,128.5 264,128.3 267,129.9 270,133.8 273,136.3 276,137.8 279,138.0 282,136.4 285,137.6 288,139.1 291,139.4 294,139.4 297,139.2 300,138.1 303,135.1 306,134.6 309,133.6 312,130.6 315,130.6 318,131.6 321,130.9 324,127.6 327,126.7 330,125.2 333,121.5 336,119.7 339,121.0 342,121.0 345,118.5 348,120.6 351,122.2 354,120.9 357,117.7 360,113.7 363,118.3 366,119.2 369,125.0 372,129.5 375,131.4 378,132.4 381,133.0 384,132.6 387,130.4 390,132.5 393,133.9 396,133.5 399,132.2 402,129.9 L400,220Z" fill="#1D1B19" fill-opacity=".06"/>
+      <path d="M0,220 L0,149.9 4,151.4 8,150.8 12,148.2 16,149.7 20,154.6 24,157.0 28,157.7 32,157.7 36,155.8 40,156.4 44,157.5 48,156.9 52,155.2 56,151.2 60,148.2 64,152.6 68,153.9 72,153.6 76,151.4 80,147.3 84,147.0 88,144.3 92,140.2 96,140.5 100,137.9 104,138.6 108,140.1 112,143.0 116,144.1 120,142.2 124,142.3 128,142.1 132,140.6 136,138.6 140,137.5 144,137.9 148,139.3 152,137.9 156,141.2 160,144.0 164,144.7 168,148.3 172,149.1 176,149.0 180,147.7 184,143.7 188,144.1 192,141.3 196,139.9 200,139.8 204,143.8 208,149.6 212,153.6 216,155.4 220,156.3 224,155.4 228,155.7 232,157.4 236,157.0 240,155.5 244,151.8 248,149.2 252,154.5 256,156.7 260,157.4 264,156.8 268,153.7 272,155.8 276,155.4 280,153.7 284,150.6 288,144.2 292,140.1 296,140.2 300,145.9 304,149.7 308,150.7 312,152.7 316,155.3 320,156.1 324,156.3 328,154.7 332,152.4 336,152.0 340,148.5 344,150.7 348,151.7 352,149.8 356,152.2 360,151.9 364,150.7 368,148.8 372,144.5 376,143.7 380,140.6 384,135.0 388,128.8 392,126.0 396,123.8 400,127.6 L400,220Z" fill="#1D1B19" fill-opacity=".09"/>
+      <path d="M0,220 L0,149.4 5,151.1 10,152.0 15,151.8 20,151.4 25,151.7 30,153.4 35,156.1 40,158.6 45,159.8 50,159.3 55,157.9 60,156.6 65,155.7 70,155.0 75,153.5 80,151.1 85,148.4 90,146.9 95,147.3 100,149.5 105,152.4 110,154.6 115,155.6 120,155.7 125,155.9 130,156.5 135,157.3 140,157.2 145,155.7 150,153.3 155,151.1 160,150.2 165,150.7 170,151.7 175,152.0 180,150.9 185,148.8 190,146.6 195,144.9 200,143.6 205,142.1 210,139.7 215,136.8 220,134.4 225,133.6 230,134.7 235,137.1 240,139.6 245,141.5 250,142.8 255,144.0 260,145.6 265,147.7 270,149.4 275,150.1 280,149.7 285,148.9 290,148.8 295,150.0 300,152.1 305,154.2 310,155.3 315,155.4 320,155.0 325,154.9 330,155.1 335,155.1 340,154.3 345,152.4 350,150.0 355,148.5 360,148.6 365,150.4 370,152.9 375,155.1 380,156.5 385,157.5 390,158.8 395,160.6 400,162.3 L400,220Z" fill="#1D1B19" fill-opacity=".14"/>
+      <path d="M0,220 L0,175.5 5,177.0 10,178.8 15,180.0 20,180.5 25,180.7 30,181.6 35,183.8 40,187.1 45,190.3 50,192.3 55,192.6 60,191.8 65,190.6 70,189.6 75,188.6 80,186.7 85,183.8 90,180.2 95,177.2 100,175.7 105,175.8 110,176.5 115,176.9 120,176.3 125,175.0 130,173.9 135,173.4 140,173.5 145,173.3 150,172.3 155,170.7 160,169.3 165,169.3 170,170.8 175,173.0 180,174.8 185,175.4 190,174.8 195,173.7 200,172.9 205,172.3 210,171.3 215,169.3 220,166.3 225,163.4 230,161.8 235,162.0 240,163.5 245,165.5 250,166.8 255,167.5 260,168.1 265,169.4 270,171.4 275,173.4 280,174.7 285,175.0 290,174.9 295,175.7 300,177.9 305,181.3 310,184.8 315,187.4 320,188.7 325,189.1 330,189.4 335,189.8 340,189.9 345,188.9 350,186.4 355,183.2 360,180.3 365,178.8 370,178.9 375,179.7 380,180.2 385,180.0 390,179.4 395,179.1 400,179.5 L400,220Z" fill="#1D1B19" fill-opacity=".22"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="mark" aria-hidden="true"><i class="d"></i><i class="b"></i><i class="s"></i></div>
+  <div class="art" aria-hidden="true">
+    <div class="ink"><svg viewBox="0 0 400 220">
+      <circle class="sun" cx="318" cy="52" r="17" fill="#B8322A" fill-opacity=".9"/>
+      <use href="#ridges"/>
+      <path class="daegan" pathLength="1" d="M0,136.5 L3,135.5 L6,133.3 L9,128.6 L12,124.5 L15,122.7 L18,117.6 L21,109.8 L24,99.4 L27,85.7 L30,67.0 L33,69.7 L36,87.9 L39,101.2 L42,111.1 L45,118.7 L48,123.7 L51,125.4 L54,128.9 L57,134.0 L60,136.3 L63,137.4 L66,137.8 L69,137.0 L72,134.2 L75,132.4 L78,131.5 L81,133.9 L84,136.2 L87,137.6 L90,138.0 L93,136.5 L96,136.5 L99,137.9 L102,137.7 L105,136.8 L108,135.4 L111,132.7 L114,127.4 L117,123.3 L120,119.5 L123,112.3 L126,104.8 L129,103.8 L132,101.4 L135,104.0 L138,109.3 L141,115.6 L144,119.4 L147,122.0 L150,123.9 L153,124.6 L156,123.2 L159,123.6 L162,124.1 L165,121.9 L168,117.4 L171,110.7 L174,105.7 L177,100.9 L180,98.4 L183,97.4 L186,95.2 L189,97.9 L192,101.6 L195,105.1 L198,107.1 L201,112.6 L204,118.3 L207,121.1 L210,121.9 L213,121.0 L216,117.7 L219,110.8 L222,112.4 L225,114.1 L228,113.1 L231,110.5 L234,108.9 L237,111.7 L240,112.4 L243,117.3 L246,123.1 L249,126.8 L252,129.4 L255,131.0 L258,131.0 L261,128.5 L264,128.3 L267,129.9 L270,133.8 L273,136.3 L276,137.8 L279,138.0 L282,136.4 L285,137.6 L288,139.1 L291,139.4 L294,139.4 L297,139.2 L300,138.1 L303,135.1 L306,134.6 L309,133.6 L312,130.6 L315,130.6 L318,131.6 L321,130.9 L324,127.6 L327,126.7 L330,125.2 L333,121.5 L336,119.7 L339,121.0 L342,121.0 L345,118.5 L348,120.6 L351,122.2 L354,120.9 L357,117.7 L360,113.7 L363,118.3 L366,119.2 L369,125.0 L372,129.5 L375,131.4 L378,132.4 L381,133.0 L384,132.6 L387,130.4 L390,132.5 L393,133.9 L396,133.5 L399,132.2 L402,129.9"/>
+    </svg></div>
+    <span class="seal" lang="ko">한민족</span>
+  </div>
+  <div class="wrap names">
+    <h1><span>한민족</span><span class="stem" aria-hidden="true"></span><span>조선민족</span></h1>
+    <p class="lede">남쪽에서는 한민족, 북쪽에서는 조선민족이라 부른다. 부르는 이름은 둘이어도 사람들은 하나다.</p>
+    <p class="en" lang="en">In the South they say Hanminjok. In the North, Chosŏn minjok. Two names for one people.</p>
+  </div>
+</header>
+
+<div class="saekdong band" aria-hidden="true"></div>
+
+<section class="tag" aria-labelledby="t">
+  <div class="wrap reveal">
+    <h2 id="t"><span>그의 후예는</span><span><span class="tcy">38</span>선 양쪽에 있다</span></h2>
+    <div class="txt">
+      <p class="en" lang="en">His descendants are on both sides of the 38th parallel.</p>
+      <p>여기서 ‘그’는 단군이다. 겨레의 첫 조상으로 전해 오는 단군의 이야기는 남에서도 북에서도 이어져 왔다.</p>
+      <p class="en" lang="en">“He” is Dangun, remembered as the first ancestor. His story has been handed down in the South and in the North alike.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cji" aria-labelledby="c">
+  <div class="wrap reveal">
+    <h2 id="c">세 획에서 시작된 글자</h2>
+    <p class="en" lang="en">An alphabet that begins with three strokes</p>
+    <div class="strokes">
+      <figure><span class="g d" aria-hidden="true"></span><figcaption>하늘<span lang="en">heaven</span></figcaption></figure>
+      <figure><span class="g b" aria-hidden="true"></span><figcaption>땅<span lang="en">earth</span></figcaption></figure>
+      <figure><span class="g s" aria-hidden="true"></span><figcaption>사람<span lang="en">person</span></figcaption></figure>
+    </div>
+    <p>1446년 세종이 반포한 훈민정음의 해례는 모음의 바탕을 세 획으로 풀이한다. 둥근 점은 하늘, 평평한 줄은 땅, 곧게 선 줄은 사람이다. 이 셋을 모아 모음을 만든다.</p>
+    <p class="en" lang="en">The Hunminjeongeum Haerye, proclaimed by King Sejong in 1446, explains the vowels with three strokes: a round dot for heaven, a flat line for earth, a standing line for the person. Combine them and the vowels appear.</p>
+    <div class="combos" role="img" aria-label="ㅣ에 점을 더하면 ㅏ, 점과 ㅡ를 모으면 ㅗ와 ㅜ">
+      <span class="eq"><i class="gl"><b class="s"></b></i><em>+</em><i class="gl"><b class="d"></b></i><em>=</em><i class="gl a"><b class="s"></b><b class="d"></b></i></span>
+      <span class="eq"><i class="gl"><b class="d"></b></i><em>+</em><i class="gl"><b class="b"></b></i><em>=</em><i class="gl o"><b class="d"></b><b class="b"></b></i></span>
+      <span class="eq"><i class="gl"><b class="b"></b></i><em>+</em><i class="gl"><b class="d"></b></i><em>=</em><i class="gl u"><b class="b"></b><b class="d"></b></i></span>
+    </div>
+    <p class="en combo-note" lang="en">Stem and dot make ㅏ. Dot over the flat line makes ㅗ; under it, ㅜ. The dots later became short strokes.</p>
+  </div>
+</section>
+
+<section aria-labelledby="p">
+  <div class="wrap reveal">
+    <h2 id="p">같은 것, 두 이름</h2>
+    <p class="en" lang="en">One thing, two names</p>
+    <div class="sides" aria-hidden="true"><span>남쪽에서</span><span>북쪽에서</span></div>
+    <ol>
+      <li style="--c:var(--cheong)">
+        <div class="pair"><span class="name sf">한반도</span><span class="line" aria-hidden="true"></span><span class="name sf">조선반도</span></div>
+        <p>같은 산줄기, 같은 강. 백두에서 한라까지.</p>
+        <p class="en" lang="en">The same ranges, the same rivers, from Paektu to Halla.</p>
+      </li>
+      <li style="--c:var(--heuk)">
+        <div class="pair"><span class="name sf">한글</span><span class="line" aria-hidden="true"></span><span class="name sf">조선글</span></div>
+        <p>세 획에서 나온 글자. 남과 북은 오늘도 같은 글자로 읽고 쓴다.</p>
+        <p class="en" lang="en">Letters grown from three strokes. North and South still read and write in them today.</p>
+      </li>
+      <li>
+        <div class="pair"><span class="name sf">아리랑</span><span class="line w" aria-hidden="true"></span><span class="name sf">아리랑</span></div>
+        <div class="years"><span>2012</span><span>2014</span></div>
+        <p>이름부터 같다. 유네스코는 남쪽의 아리랑을 2012년에, 북쪽의 아리랑을 2014년에 따로 인류무형문화유산으로 올렸다.</p>
+        <p class="en" lang="en">Even the name is the same. UNESCO listed the South’s Arirang in 2012 and the North’s in 2014, separately.</p>
+      </li>
+      <li style="--c:var(--jeok)">
+        <div class="pair"><span class="name sf">김장</span><span class="line" aria-hidden="true"></span><span class="name sf">김치 담그기</span></div>
+        <div class="years"><span>2013</span><span>2015</span></div>
+        <p>겨울이 오기 전, 이웃이 모여 함께 김치를 담근다. 유네스코는 남쪽 것을 2013년에, 북쪽 것을 2015년에 따로 올렸다.</p>
+        <p class="en" lang="en">Neighbours gathering to make kimchi together before winter. UNESCO listed the South’s tradition in 2013 and the North’s in 2015, separately.</p>
+      </li>
+      <li class="together" style="--c:var(--hwang)">
+        <div class="pair"><span class="name sf">씨름</span><span class="line"><span class="shared">2018</span></span><span class="name sf">씨름</span></div>
+        <p>1,500여 년 전 고구려 고분 벽화에도 씨름하는 사람들이 그려져 있다. 2018년 유네스코는 씨름을 남과 북의 이름으로 함께 올렸다. 남북이 공동으로 등재한 첫 유산이다.</p>
+        <p class="en" lang="en">Wrestlers already appear on Goguryeo tomb murals some 1,500 years old. In 2018 UNESCO listed ssireum jointly, in the names of both Koreas: the first heritage the two ever inscribed together.</p>
+      </li>
+    </ol>
+    <div class="obang">
+      <p>다섯 줄의 빛깔은 오방색이다. 가운데를 뜻하는 노랑은 함께 올린 씨름에 두었다.</p>
+      <p class="en" lang="en">The five colours are obangsaek, the traditional colours of the five directions. Yellow, the colour of the centre, belongs to the one heritage listed together.</p>
+    </div>
+  </div>
+</section>
+
+<div class="saekdong band" aria-hidden="true"></div>
+
+<section class="close" aria-labelledby="z">
+  <div class="wrap reveal">
+    <h2 id="z">끊기지 않는 줄기</h2>
+    <p class="en" lang="en">The unbroken spine</p>
+    <p>이 페이지 맨 위의 산줄기는 백두대간이다. 백두산에서 지리산까지 이어지는 한 줄기로, 강물이 가로지르지 않는다. 그 줄기는 38선을 넘어 끊기지 않고 이어진다.</p>
+    <p class="en" lang="en">The ridge at the top of this page is the Baekdudaegan, one mountain spine from Mount Paektu to Mount Jiri that no river cuts through. It runs across the 38th parallel without a break.</p>
+    <p class="coda">선은 가족을 갈라놓았다. 그러나 말과 노래와 밥상까지 가르지는 못했다.</p>
+    <p class="en" lang="en">The line divided families. It did not divide the language, the songs, or the table.</p>
+  </div>
+  <div class="art" aria-hidden="true">
+    <div class="ink"><svg viewBox="0 0 400 220"><use href="#ridges"/><path class="daegan" d="M0,136.5 L3,135.5 L6,133.3 L9,128.6 L12,124.5 L15,122.7 L18,117.6 L21,109.8 L24,99.4 L27,85.7 L30,67.0 L33,69.7 L36,87.9 L39,101.2 L42,111.1 L45,118.7 L48,123.7 L51,125.4 L54,128.9 L57,134.0 L60,136.3 L63,137.4 L66,137.8 L69,137.0 L72,134.2 L75,132.4 L78,131.5 L81,133.9 L84,136.2 L87,137.6 L90,138.0 L93,136.5 L96,136.5 L99,137.9 L102,137.7 L105,136.8 L108,135.4 L111,132.7 L114,127.4 L117,123.3 L120,119.5 L123,112.3 L126,104.8 L129,103.8 L132,101.4 L135,104.0 L138,109.3 L141,115.6 L144,119.4 L147,122.0 L150,123.9 L153,124.6 L156,123.2 L159,123.6 L162,124.1 L165,121.9 L168,117.4 L171,110.7 L174,105.7 L177,100.9 L180,98.4 L183,97.4 L186,95.2 L189,97.9 L192,101.6 L195,105.1 L198,107.1 L201,112.6 L204,118.3 L207,121.1 L210,121.9 L213,121.0 L216,117.7 L219,110.8 L222,112.4 L225,114.1 L228,113.1 L231,110.5 L234,108.9 L237,111.7 L240,112.4 L243,117.3 L246,123.1 L249,126.8 L252,129.4 L255,131.0 L258,131.0 L261,128.5 L264,128.3 L267,129.9 L270,133.8 L273,136.3 L276,137.8 L279,138.0 L282,136.4 L285,137.6 L288,139.1 L291,139.4 L294,139.4 L297,139.2 L300,138.1 L303,135.1 L306,134.6 L309,133.6 L312,130.6 L315,130.6 L318,131.6 L321,130.9 L324,127.6 L327,126.7 L330,125.2 L333,121.5 L336,119.7 L339,121.0 L342,121.0 L345,118.5 L348,120.6 L351,122.2 L354,120.9 L357,117.7 L360,113.7 L363,118.3 L366,119.2 L369,125.0 L372,129.5 L375,131.4 L378,132.4 L381,133.0 L384,132.6 L387,130.4 L390,132.5 L393,133.9 L396,133.5 L399,132.2 L402,129.9"/></svg></div>
+  </div>
+</section>
+
+<footer>
+  <div class="credit">
+    <span>han-minjok.org</span>
+    <span lang="en">Made by <a href="https://www.linkedin.com/in/jessecares" rel="author">Jesse James</a></span>
+    <span class="sf gang" lang="ko">주체강</span>
+  </div>
+  <span class="seal" lang="ko" aria-hidden="true">한민족</span>
+</footer>
+</body>
+</html>
