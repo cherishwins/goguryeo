@@ -154,6 +154,8 @@ footer .seal{position:static}
 .credit a{color:var(--heuk);text-decoration:underline;text-decoration-color:var(--jeok);text-underline-offset:3px;text-decoration-thickness:1.5px}
 .credit a:focus-visible{outline:2px solid var(--jeok);outline-offset:3px;border-radius:2px}
 .gang{color:var(--heuk);font-size:.95rem;letter-spacing:.08em;margin-top:.2rem}
+/* signature slot, see README: inert until an <img> is dropped in */
+.credit img{vertical-align:middle;margin-right:.45rem}
 
 /* Ink settles block by block, never a whole section at once: an animated
    element must be shorter than the screen, or the reader is inside it and
@@ -297,6 +299,9 @@ footer .seal{position:static}
 <footer>
   <div class="credit">
     <span>han-minjok.org</span>
+    <!-- signature slot: drop the rose mark in here, width set to the real
+         intrinsic ratio at 40px tall. See README, "Footer signature slot".
+         <img src="/rose.webp" width="40" height="40" alt="" decoding="async"> -->
     <span lang="en">Made by <a href="https://www.linkedin.com/in/jessecares" rel="author">Jesse James</a></span>
     <span class="sf gang" lang="ko">주체강</span>
   </div>
