@@ -85,11 +85,18 @@ section{padding:4.5rem 0}
 .band{margin:0}
 
 /* ── 세로쓰기 vertical tagline ── */
-.tag .wrap{display:flex;flex-direction:row-reverse;gap:1.4rem;align-items:flex-start}
-.tag h2{writing-mode:vertical-rl;font-size:clamp(1.9rem,8.6vw,2.7rem);line-height:1.5;letter-spacing:.06em;flex:none;padding-left:1rem;border-left:1px solid var(--wash)}
+/* Under 40rem the wrap still flexes, but .txt claims a whole line, so the
+   title hangs centred on its own row and the prose runs full width beneath.
+   Staying a row-flex item is what keeps the title's inline size at
+   max-content, one line of the couplet per column, exactly as on desktop. */
+.tag .wrap{display:flex;flex-direction:row-reverse;flex-wrap:wrap;justify-content:center;gap:1.4rem;align-items:flex-start}
+.tag h2{writing-mode:vertical-rl;font-size:clamp(1.7rem,7.5vw,2.6rem);line-height:1.5;letter-spacing:.06em;flex:none;padding-left:1rem;border-left:1px solid var(--wash)}
 .tag h2 span{display:block}
 .tcy{text-combine-upright:all;-webkit-text-combine:horizontal;color:var(--jeok)}
-.tag .txt{padding-top:.4rem}
+.tag .txt{flex:1 1 100%}
+@media (min-width:40rem){
+  .tag .txt{flex:1 1 0;padding-top:.4rem}
+}
 .tag .txt p:lang(ko){margin-top:1.5rem}
 .tag .txt .en:first-child{margin-top:0;font-style:italic}
 
