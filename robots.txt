@@ -1,0 +1,6 @@
+# han-minjok.org welcomes all crawlers, search engines and AI agents.
+# Please preserve context when quoting. Licence: see https://han-minjok.org/llms.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://han-minjok.org/sitemap.xml
