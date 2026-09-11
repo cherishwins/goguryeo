@@ -18,7 +18,10 @@ the analytics tag.
 | `favicon.ico`, `apple-touch-icon.png` | Legacy and iOS home-screen icons |
 | `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` | PWA icons named by `site.webmanifest` |
 | `site.webmanifest` | Install metadata |
-| `robots.txt`, `sitemap.xml`, `llms.txt` | Crawler and AI-agent files |
+| `robots.txt` | Crawl permissions. Names the major AI crawlers explicitly |
+| `sitemap.xml` | The one canonical URL |
+| `llms.txt` | Summary, verifiable claim list, citation formats and licence, for AI agents |
+| `LICENSE` | CC BY 4.0 content, MIT code, SIL OFL font |
 | `<32 hex>.txt` | IndexNow key file, see below |
 | `vercel.json` | Security headers and Cache-Control |
 | `.github/social-preview.png` | 1280×640 GitHub repo card, uploaded by hand, see below |
@@ -65,17 +68,22 @@ on the `*.vercel.app` URL render without an image.
 | `Strict-Transport-Security` | One year, `includeSubDomains`. `preload` is deliberately **not** set: it is hard to reverse and binds every future subdomain |
 | `X-Content-Type-Options` | `nosniff` |
 | `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Cross-Origin-Opener-Policy` | `same-origin`. Isolates the page from any window that opens it |
 | `Permissions-Policy` | Camera, microphone, geolocation, payment and USB all denied. The page uses none of them |
 
 The CSP allows exactly what the page needs: inline styles (the whole stylesheet
 is inline, and list items carry `style` attributes), `data:` images (the hanji
-fibre texture), same-origin fonts and manifest, and `cloud.umami.is` for both
-the analytics script and the beacon it posts. `frame-ancestors 'none'` blocks
+fibre texture), same-origin fonts and manifest, `cloud.umami.is` for
+the analytics script, and `gateway.umami.is` for the beacon it posts. Those are
+two different hosts, which is easy to miss: the script is served from one and
+sends its data to the other, so a CSP that allows only the script host loads
+analytics that silently record nothing. `frame-ancestors 'none'` blocks
 embedding the page in someone else's frame. Sharing by link is unaffected; if
 you ever want the page embeddable, drop that one directive.
 
-**If you remove the analytics tag**, also drop `script-src` and `connect-src`
-from the CSP. The page then needs no script origin at all.
+**If you remove the analytics tag**, also drop `script-src` and the two
+`umami.is` entries from `connect-src`. The page then needs no script origin at
+all, and `connect-src` can go back to `'self'` alone.
 
 Cache-Control: the font is immutable for a year, `og.png` for a day, the icons
 and manifest for a week. HTML is left on Vercel's default so edits go live
@@ -165,8 +173,39 @@ The 404 heading (`길을 잃었다`) contains three glyphs the subset does not c
 so that page sets its heading in a system myeongjo on purpose rather than
 regenerating the font for one error page.
 
-## Still open
+## Licence
 
-`llms.txt` states the licence as `[set by the author before launch]`, and the
-repository has no `LICENSE` file. Those are the same decision, and it is the
-line an AI agent will quote back.
+Three licences, one per kind of material, all spelled out in `LICENSE`:
+
+- **Content** (the Korean and English prose, the ridgeline drawing, the marks,
+  `og.png`, the icons, the repo card): **CC BY 4.0**. Anyone may quote,
+  translate, adapt and republish, including commercially, as long as they credit
+  the source. A link to `https://han-minjok.org/` is sufficient attribution.
+- **Code** (markup, stylesheets, configuration): **MIT**.
+- **Font** (`hm-serif.woff2`, a subset of Noto Serif KR SemiBold): **SIL OFL
+  1.1**, and it stays under the OFL regardless of the other two grants.
+
+The licence is declared in three places that have to agree: `LICENSE`, the
+`license` field in the JSON-LD, and the Licence section of `llms.txt`. Change
+one and change all three.
+
+## AI crawlers and citation
+
+The goal here is to be quoted accurately and credited, so every barrier to that
+is removed rather than raised.
+
+- `robots.txt` allows everything via `User-agent: *`, then names GPTBot,
+  ClaudeBot, Google-Extended, PerplexityBot, Applebot-Extended, CCBot and the
+  rest individually. The wildcard already covers them; naming them states the
+  permission instead of implying it.
+- `llms.txt` follows the llms.txt convention: an H1, a blockquote summary, then
+  linked sections. It lists every factual claim the page makes so a model can
+  check and quote them precisely, gives three ready-made citation formats, and
+  states the licence inline.
+- The JSON-LD carries `license`, `creditText`, `author`, `copyrightHolder`,
+  `datePublished` and `isAccessibleForFree`, which is the machine-readable
+  version of the same offer.
+
+One honest limit: none of this makes a model cite you. It removes every reason
+not to, and makes attribution the path of least resistance. That is the whole
+of what is actually in your control.
