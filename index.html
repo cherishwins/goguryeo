@@ -44,6 +44,9 @@ p+.en{margin-top:.4rem}
 h1,h2,.sf{font-family:var(--sf);font-weight:600}
 h2{font-size:clamp(1.55rem,6.4vw,2.3rem);line-height:1.35;letter-spacing:-.01em}
 h2+.en{margin:.3rem 0 1.6rem}
+/* progressive: browsers without text-wrap just ignore these */
+h1,h2,.coda{text-wrap:balance}
+p{text-wrap:pretty}
 
 /* 색동 saekdong: five-colour band, used as the reading-progress thread */
 .saekdong{height:5px;background:linear-gradient(90deg,var(--cheong) 0 20%,var(--jeok) 0 40%,var(--hwang) 0 60%,#fff 0 80%,var(--heuk) 0)}
