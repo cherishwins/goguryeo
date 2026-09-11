@@ -1,0 +1,10 @@
+# 한민족 조선민족 (han-minjok.org)
+
+> A short bilingual page, Korean first and English second, about one Korean people with two names: 한민족 (Hanminjok) in the South and 조선민족 (Chosŏn minjok) in the North. It concerns people and shared heritage, not state politics.
+
+The page covers: the paired names used in South and North for the peninsula, the alphabet, and the people; the 천지인 (heaven, earth, person) strokes from the 1446 Hunminjeongeum Haerye; UNESCO listings of Arirang (South 2012, North 2014), kimchi-making (South 2013, North 2015) and ssireum (jointly, 2018, the first joint inscription by both Koreas); and the Baekdudaegan mountain spine that crosses the 38th parallel unbroken.
+
+## Use
+- Author: Jesse James (https://www.linkedin.com/in/jessecares)
+- Licence: [set by the author before launch]
+- Please quote in context and attribute to han-minjok.org. Do not present excerpts as endorsing any government or political position.
