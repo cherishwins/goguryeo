@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>길을 잃었다 | 한민족 조선민족</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F3EFE6">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+/* The subset carries only the glyphs the front page sets in serif, so the
+   seal (한민족) may use it and the heading may not. The heading takes the
+   same stack without "HM Serif", a system myeongjo rather than a silent
+   fallback to something else. */
+@font-face{font-family:"HM Serif";src:url(/hm-serif.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{
+  --baek:#F3EFE6;  /* 백 white: hanji ground */
+  --heuk:#1D1B19;  /* 흑 black: meok ink */
+  --cheong:#1F4E79;/* 청 blue */
+  --jeok:#B8322A;  /* 적 red: vermilion, the seal */
+  --hwang:#D6A12B; /* 황 yellow: the centre */
+  --ash:#5A554D;
+  --sf:"HM Serif","Noto Serif KR","Noto Serif CJK KR",AppleMyungjo,"Nanum Myeongjo",Batang,serif;
+  --sys:"Noto Serif KR","Noto Serif CJK KR",AppleMyungjo,"Nanum Myeongjo",Batang,serif;
+  --ss:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Segoe UI",sans-serif;
+  --gut:clamp(1.25rem,5vw,2.5rem);
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--baek);color:var(--heuk);font:1.0625rem/1.8 var(--ss);-webkit-text-size-adjust:100%}
+body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .06' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .4 0 0 0 0 .33 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)'/%3E%3C/svg%3E");min-height:100svh;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom)}
+:lang(ko){word-break:keep-all;overflow-wrap:anywhere}
+:lang(en){word-break:normal;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+
+.saekdong{height:5px;background:linear-gradient(90deg,var(--cheong) 0 20%,var(--jeok) 0 40%,var(--hwang) 0 60%,#fff 0 80%,var(--heuk) 0);flex:none}
+
+.mark{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;gap:5px 9px;width:max-content;padding:1.4rem var(--gut) 0;align-items:center}
+.mark i{display:block;background:var(--heuk)}
+.mark .d{width:8px;height:8px;border-radius:50%}
+.mark .b{width:22px;height:4px;grid-row:2}
+.mark .s{width:4px;height:26px;grid-column:2;grid-row:1/3;background:var(--jeok)}
+
+main{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:40rem;width:100%;margin:0 auto;padding:3rem var(--gut)}
+h1{font:600 clamp(2.1rem,9vw,3.2rem)/1.3 var(--sys);letter-spacing:-.01em;text-wrap:balance}
+.en{color:var(--ash);font-size:.99rem;line-height:1.65;margin-top:.5rem}
+.home{margin-top:2.4rem}
+.home a{color:var(--heuk);text-decoration:underline;text-decoration-color:var(--jeok);text-underline-offset:3px;text-decoration-thickness:1.5px}
+.home a:focus-visible{outline:2px solid var(--jeok);outline-offset:3px;border-radius:2px}
+
+.seal{align-self:flex-end;writing-mode:vertical-rl;background:var(--jeok);color:var(--baek);font:600 .95rem/1 var(--sf);letter-spacing:.12em;padding:.5rem .32rem;border-radius:3px;box-shadow:inset 0 0 0 2px var(--jeok),inset 0 0 0 3px rgba(243,239,230,.55);margin:0 var(--gut) 2.5rem}
+</style>
+</head>
+<body>
+<div class="saekdong" aria-hidden="true"></div>
+<div class="mark" aria-hidden="true"><i class="d"></i><i class="b"></i><i class="s"></i></div>
+
+<main>
+  <h1>길을 잃었다</h1>
+  <p class="en" lang="en">This path doesn't exist.</p>
+  <p class="home"><a href="/">han-minjok.org</a></p>
+</main>
+
+<span class="seal" lang="ko" aria-hidden="true">한민족</span>
+</body>
+</html>
