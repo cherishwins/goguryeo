@@ -6,8 +6,9 @@
         { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'none'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src https://cloud.umami.is; connect-src 'self' https://cloud.umami.is; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src https://cloud.umami.is; connect-src 'self' https://cloud.umami.is https://gateway.umami.is; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" }
       ]
     },
     { "source": "/hm-serif.woff2", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
