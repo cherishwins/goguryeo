@@ -37,6 +37,7 @@ html{background:var(--baek);color:var(--heuk);font:1.0625rem/1.8 var(--ss);-webk
 /* hanji fibre: drawn by the browser, no image download */
 body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .06' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .4 0 0 0 0 .33 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)'/%3E%3C/svg%3E");padding-bottom:env(safe-area-inset-bottom)}
 :lang(ko){word-break:keep-all;overflow-wrap:anywhere}
+:lang(en){word-break:normal;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .en{color:var(--ash);font-size:.93em;line-height:1.65}
 p+.en{margin-top:.4rem}
 .wrap{max-width:40rem;margin:0 auto;padding:0 var(--gut)}
