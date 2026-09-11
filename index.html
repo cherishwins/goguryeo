@@ -148,10 +148,14 @@ footer .seal{position:static}
 .credit a:focus-visible{outline:2px solid var(--jeok);outline-offset:3px;border-radius:2px}
 .gang{color:var(--heuk);font-size:.95rem;letter-spacing:.08em;margin-top:.2rem}
 
-/* ink bleeds in as you read (progressive) */
+/* Ink settles block by block, never a whole section at once: an animated
+   element must be shorter than the screen, or the reader is inside it and
+   reading while it is still fading in. Direct children only, so a list item
+   and its paragraphs never fade on top of each other. */
 @media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){
-  .reveal{animation:bleed linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
-  @keyframes bleed{from{opacity:0;filter:blur(3px);transform:translateY(14px)}}
+  .reveal>h2,.reveal>p,.reveal>.txt>p,.reveal>ol>li,.reveal>.combos,.reveal>.obang,.reveal .strokes figure{
+    animation:bleed linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  @keyframes bleed{from{opacity:0;transform:translateY(12px)}}
 }}
 
 @media (min-width:48rem){
